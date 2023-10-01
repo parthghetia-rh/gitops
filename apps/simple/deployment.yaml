@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-spring-kotlin
+  name: parth-spring-kotlin
 spec:
   selector:
     matchLabels:
-      app: sample-spring-kotlin
+      app: parth-spring-kotlin
   template:
     metadata:
       labels:
-        app: sample-spring-kotlin
+        app: parth-spring-kotlin
     spec:
       containers:
-      - name: sample-spring-kotlin
-        image: piomin/sample-spring-kotlin:1.4.8
+      - name: parth-spring-kotlin
+        image: piomin/parth-spring-kotlin:1.4.8
         ports:
         - containerPort: 8080
           name: http
