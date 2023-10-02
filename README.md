@@ -8,4 +8,4 @@
 - You then need to install the ACM and Openshift GitOps operator on the hub cluster
 
 #### Detailed Installation Steps
-- sfa
+- Test Parth
