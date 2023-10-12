@@ -11,8 +11,8 @@ spec:
     server: https://kubernetes.default.svc
   project: bootstrap
   source:
-    path: bootstrap/overlays/{{ fromClusterClaim "gitops" }}
-    repoURL: https://github.com/gnunn-gitops/cluster-config.git
+    path: bootstrap/base
+    repoURL: https://github.com/parthghetia-rh/spoke-cluster-config.git
     targetRevision: main
   syncPolicy:
     automated:

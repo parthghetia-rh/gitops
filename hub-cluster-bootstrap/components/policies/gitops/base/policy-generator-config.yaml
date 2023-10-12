@@ -8,34 +8,25 @@ policyDefaults:
 placementBindingDefaults:
   name: "binding-policy-gitops"
 policies:
-  - name: policy-eso-secret-store
-    manifests:
-      - path: manifests/eso/base/
   - name: policy-gitops-subscription
     remediationAction: enforce
     manifests:
       - path: manifests/gitops-subscription/base/
-  - name: policy-gitops-instance
-    manifests:
-      - path: manifests/gitops-instance/base/
   - name: policy-gitops-bootstrap
     manifests:
       - path: manifests/gitops-bootstrap/base/
-  - name: policy-gitops-notifications
-    remediationAction: enforce
+  - name: policy-gitops-instance
     manifests:
-      - path: manifests/gitops-notifications/base/
+      - path: manifests/gitops-instance/base/
     configurationPolicyAnnotations:
       policy.open-cluster-management.io/disable-templates: "true"
 policySets:
   - name: "gitops"
     description: "Policy for bootstrapping cluster with gitops"
     policies:
-      - policy-eso-secret-store
       - policy-gitops-subscription
-      - policy-gitops-instance
       - policy-gitops-bootstrap
-      - policy-gitops-notifications
+      - policy-gitops-instance
     generatePolicySetPlacement: false
     placement:
       name: placement-policy-gitops

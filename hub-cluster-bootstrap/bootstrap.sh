@@ -6,7 +6,7 @@ SLEEP_SECONDS=30
 echo ""
 echo "Installing RHACM Operator."
 
-kustomize build github.com/redhat-cop/gitops-catalog/advanced-cluster-management/operator/overlays/release-2.8 | oc apply -f -
+kustomize build github.com/redhat-cop/gitops-catalog/advanced-cluster-management/operator/overlays/release-2.7 | oc apply -f -
 
 echo "Pause $SLEEP_SECONDS seconds for the creation of the rhacm-operator..."
 sleep $SLEEP_SECONDS
@@ -30,9 +30,9 @@ do
   sleep 10
 done
 
-echo "Installing policies and initial secrets"
+echo "Installing policies and initial namespaces"
 
-kustomize build bootstrap/secrets/base | oc apply -f -
+kustomize build bootstrap/namespace/base | oc apply -f -
 kustomize build bootstrap/policies/overlays/default --enable-alpha-plugins | oc apply -f -
 
 echo "Labeling cluster with 'gitops: local.home'"
