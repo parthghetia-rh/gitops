@@ -1,4 +1,4 @@
-# gitops-innovative
+# gitops
 
 ## Enabling and working with ApplicationSets
 
